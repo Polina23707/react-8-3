@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react"
 import { AuthContext } from "./AuthContext"
-// import { useContext } from "react";
-import NewsItem from "./NewsItem";
+import NewsItem , {INewsItem} from "./NewsItem";
 
 export default function News() {
-  // const {profile, setProfile, token, setToken} = useContext(AuthContext);
-
-  const [news, setNews] = useState([]);
+  const [news, setNews] = useState<INewsItem[]>([]);
 
   useEffect(() => {
     const getData = async (url: string, token: string) => {

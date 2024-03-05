@@ -19,7 +19,6 @@ export default function UserHeader() {
           throw new Error(response.statusText);
         }
         const data = await response.json();
-        // console.log(data);
         setProfile(data);
       } catch (e: any) {
         console.error('Error: ' + e);
@@ -43,7 +42,7 @@ export default function UserHeader() {
 
   return(
     <AuthContext.Consumer>
-      {({token, setToken, profile, setProfile}) => (
+      {({profile}) => (
         <div className='header-profile'>
           <div>Hello, {profile.name}</div>
           <button onClick={onLogout}>Logout</button>
